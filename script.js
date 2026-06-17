@@ -105,12 +105,26 @@ values
 
 }
 
+function populateCheckboxGroup(containerId, cssClass, values) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+    [...new Set(values)].filter(Boolean).sort().forEach(value => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" class="${cssClass}" value="${value}" checked> ${value}`;
+        container.appendChild(label);
+    });
+}
+
 function populateFilters() {
 
     fillSelect(
         "genderFilter",
         [...new Set(profiles.map(p => p.gender))]
     );
+
+    populateCheckboxGroup("casteDropdown", "casteCheck", profiles.map(p => p.caste));
+    populateCheckboxGroup("educationDropdown", "educationCheck", profiles.map(p => p.education));
+    populateCheckboxGroup("employmentDropdown", "employmentCheck", profiles.map(p => p.employment));
 
 }
 
