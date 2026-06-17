@@ -24,17 +24,61 @@
         <option value="">All Genders</option>
     </select>
 
-    <select id="casteFilter">
-        <option value="">All Castes</option>
-    </select>
+<div class="filter-group">
+    <strong>Caste</strong>
 
-    <select id="educationFilter">
-        <option value="">All Education</option>
-    </select>
+    <label>
+        <input type="checkbox"
+        class="casteCheck"
+        value="Latin Catholic">
 
-    <select id="employmentFilter">
-        <option value="">All Employment</option>
-    </select>
+        Latin Catholic
+    </label>
+
+    <label>
+        <input type="checkbox"
+        class="casteCheck"
+        value="Anglo Indian">
+
+        Anglo Indian
+    </label>
+</div>
+<div class="filter-group">
+    <strong>Education</strong>
+
+    <label><input type="checkbox" class="educationCheck" value="Lower than SSLC"> Lower than SSLC</label>
+
+    <label><input type="checkbox" class="educationCheck" value="SSLC"> SSLC</label>
+
+    <label><input type="checkbox" class="educationCheck" value="+2"> +2</label>
+
+    <label><input type="checkbox" class="educationCheck" value="Diploma"> Diploma</label>
+
+    <label><input type="checkbox" class="educationCheck" value="Degree"> Degree</label>
+
+    <label><input type="checkbox" class="educationCheck" value="PG"> PG</label>
+
+    <label><input type="checkbox" class="educationCheck" value="PHD"> PHD</label>
+</div>
+<div class="filter-group">
+    <strong>Employment</strong>
+
+    <label>
+        <input type="checkbox"
+        class="employmentCheck"
+        value="Employed">
+
+        Employed
+    </label>
+
+    <label>
+        <input type="checkbox"
+        class="employmentCheck"
+        value="Unemployed">
+
+        Unemployed
+    </label>
+</div>
 
     <input
         type="number"
