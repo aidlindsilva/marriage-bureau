@@ -4,20 +4,15 @@ const API_URL =
 let profiles = [];
 
 async function loadProfiles() {
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
 
+        profiles = Array.isArray(data) ? data : (data.data || []);
 
-try {
-
-    const response = await fetch(API_URL);
-    profiles = await response.json();
-
-    profiles.forEach((profile, index) => {
-
-        profile.profileId =
-            "MB-" +
-            String(index + 1).padStart(3, "0");
-
-    });
+        profiles.forEach((profile, index) => {
+            profile.profileId = "MB-" + String(index + 1).padStart(3, "0");
+        });
 
     populateFilters();
     renderProfiles();
