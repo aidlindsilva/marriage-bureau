@@ -408,3 +408,24 @@ window.addEventListener(
 );
 
 loadProfiles();
+
+function toggleDropdown(id, btn) {
+    const menu = document.getElementById(id);
+    const allMenus = document.querySelectorAll(".dropdown-menu");
+    const allBtns = document.querySelectorAll(".dropdown-btn");
+
+    // Close all others
+    allMenus.forEach(m => { if (m.id !== id) m.classList.remove("open"); });
+    allBtns.forEach(b => { if (b !== btn) b.classList.remove("open"); });
+
+    menu.classList.toggle("open");
+    btn.classList.toggle("open");
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".dropdown-filter")) {
+        document.querySelectorAll(".dropdown-menu").forEach(m => m.classList.remove("open"));
+        document.querySelectorAll(".dropdown-btn").forEach(b => b.classList.remove("open"));
+    }
+});
