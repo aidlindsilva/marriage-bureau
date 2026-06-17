@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marriage Bureau</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,104 +12,73 @@
 
     <h1>Our Lady of Loreto Church - Marriage Bureau</h1>
 
-<div class="filters">
+    <div class="filters">
 
-    <input
-        type="text"
-        id="search"
-        placeholder="Search by name">
+        <input type="text" id="search" placeholder="Search by name">
 
-    <select id="genderFilter">
-        <option value="">All Genders</option>
-    </select>
+        <select id="genderFilter">
+            <option value="">All Genders</option>
+        </select>
 
-<div class="filter-group">
-    <strong>Caste</strong>
+        <!-- Caste Dropdown -->
+        <div class="dropdown-filter">
+            <button class="dropdown-btn" onclick="toggleDropdown('casteDropdown', this)">
+                Caste <span class="arrow">▾</span>
+            </button>
+            <div class="dropdown-menu" id="casteDropdown">
+                <label><input type="checkbox" class="casteCheck" value="Latin Catholic" checked> Latin Catholic</label>
+                <label><input type="checkbox" class="casteCheck" value="Anglo Indian" checked> Anglo Indian</label>
+            </div>
+        </div>
 
-    <label>
-        <input type="checkbox"
-        class="casteCheck"
-        value="Latin Catholic">
+        <!-- Education Dropdown -->
+        <div class="dropdown-filter">
+            <button class="dropdown-btn" onclick="toggleDropdown('educationDropdown', this)">
+                Education <span class="arrow">▾</span>
+            </button>
+            <div class="dropdown-menu" id="educationDropdown">
+                <label><input type="checkbox" class="educationCheck" value="Lower than SSLC" checked> Lower than SSLC</label>
+                <label><input type="checkbox" class="educationCheck" value="SSLC" checked> SSLC</label>
+                <label><input type="checkbox" class="educationCheck" value="+2" checked> +2</label>
+                <label><input type="checkbox" class="educationCheck" value="Diploma" checked> Diploma</label>
+                <label><input type="checkbox" class="educationCheck" value="Degree" checked> Degree</label>
+                <label><input type="checkbox" class="educationCheck" value="PG" checked> PG</label>
+                <label><input type="checkbox" class="educationCheck" value="PHD" checked> PHD</label>
+            </div>
+        </div>
 
-        Latin Catholic
-    </label>
+        <!-- Employment Dropdown -->
+        <div class="dropdown-filter">
+            <button class="dropdown-btn" onclick="toggleDropdown('employmentDropdown', this)">
+                Employment <span class="arrow">▾</span>
+            </button>
+            <div class="dropdown-menu" id="employmentDropdown">
+                <label><input type="checkbox" class="employmentCheck" value="Employed" checked> Employed</label>
+                <label><input type="checkbox" class="employmentCheck" value="Unemployed" checked> Unemployed</label>
+            </div>
+        </div>
 
-    <label>
-        <input type="checkbox"
-        class="casteCheck"
-        value="Anglo Indian">
+        <input type="number" id="minAge" placeholder="Min Age">
+        <input type="number" id="maxAge" placeholder="Max Age">
 
-        Anglo Indian
-    </label>
-</div>
-<div class="filter-group">
-    <strong>Education</strong>
+        <select id="sortBy">
+            <option value="newest">Newest Profiles</option>
+            <option value="youngest">Youngest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">Name A-Z</option>
+            <option value="za">Name Z-A</option>
+        </select>
 
-    <label><input type="checkbox" class="educationCheck" value="Lower than SSLC"> Lower than SSLC</label>
-
-    <label><input type="checkbox" class="educationCheck" value="SSLC"> SSLC</label>
-
-    <label><input type="checkbox" class="educationCheck" value="+2"> +2</label>
-
-    <label><input type="checkbox" class="educationCheck" value="Diploma"> Diploma</label>
-
-    <label><input type="checkbox" class="educationCheck" value="Degree"> Degree</label>
-
-    <label><input type="checkbox" class="educationCheck" value="PG"> PG</label>
-
-    <label><input type="checkbox" class="educationCheck" value="PHD"> PHD</label>
-</div>
-<div class="filter-group">
-    <strong>Employment</strong>
-
-    <label>
-        <input type="checkbox"
-        class="employmentCheck"
-        value="Employed">
-
-        Employed
-    </label>
-
-    <label>
-        <input type="checkbox"
-        class="employmentCheck"
-        value="Unemployed">
-
-        Unemployed
-    </label>
-</div>
-
-    <input
-        type="number"
-        id="minAge"
-        placeholder="Min Age">
-
-    <input
-        type="number"
-        id="maxAge"
-        placeholder="Max Age">
-
-    <select id="sortBy">
-        <option value="newest">Newest Profiles</option>
-        <option value="youngest">Youngest First</option>
-        <option value="oldest">Oldest First</option>
-        <option value="az">Name A-Z</option>
-        <option value="za">Name Z-A</option>
-    </select>
-
-</div>
-
-<div id="profiles"></div>
-
-<div id="profileModal" class="modal">
-    <div class="modal-content">
-        <span id="closeModal">&times;</span>
-
-        <div id="modalBody"></div>
     </div>
-</div>
 
     <div id="profiles"></div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
