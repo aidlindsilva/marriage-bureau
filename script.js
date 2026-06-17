@@ -185,17 +185,17 @@ const gender =
     .getElementById("genderFilter")
     .value;
 
-const selectedEducations =
-[...document.querySelectorAll(".educationCheck:checked")]
-.map(c=>c.value);
+const allCasteBoxes = document.querySelectorAll(".casteCheck");
+const checkedCastes = [...document.querySelectorAll(".casteCheck:checked")];
+const selectedCastes = checkedCastes.length === allCasteBoxes.length ? [] : checkedCastes.map(c => c.value);
 
-const selectedCastes =
-[...document.querySelectorAll(".casteCheck:checked")]
-.map(c=>c.value);
+const allEducationBoxes = document.querySelectorAll(".educationCheck");
+const checkedEducations = [...document.querySelectorAll(".educationCheck:checked")];
+const selectedEducations = checkedEducations.length === allEducationBoxes.length ? [] : checkedEducations.map(c => c.value);
 
-const selectedEmployment =
-[...document.querySelectorAll(".employmentCheck:checked")]
-.map(c=>c.value);
+const allEmploymentBoxes = document.querySelectorAll(".employmentCheck");
+const checkedEmployment = [...document.querySelectorAll(".employmentCheck:checked")];
+const selectedEmployment = checkedEmployment.length === allEmploymentBoxes.length ? [] : checkedEmployment.map(c => c.value);
 
 const minAge =
     Number(
