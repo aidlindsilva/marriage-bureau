@@ -246,18 +246,24 @@ let filtered =
 
             &&
 
-            (!caste ||
-                profile.caste === caste)
+(
+selectedCastes.length===0 ||
+selectedCastes.includes(profile.caste)
+)
 
-            &&
+&&
 
-            (!education ||
-                profile.education === education)
+(
+selectedEducations.length===0 ||
+selectedEducations.includes(profile.education)
+)
 
-            &&
+&&
 
-            (!employment ||
-                profile.employment === employment)
+(
+selectedEmployment.length===0 ||
+selectedEmployment.includes(profile.employment)
+)
 
             &&
 
