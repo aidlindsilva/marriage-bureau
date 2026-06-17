@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.ico"> 
-    <link rel="stylesheet" href="style.css">
     <title>Marriage Bureau</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <h1>
-        <img src="favicon.ico" alt="Logo" style="height:50px; vertical-align:middle; margin-right:12px; border-radius:50%;">
+        <img src="favicon.png" alt="Logo" style="height:50px; vertical-align:middle; margin-right:12px; border-radius:50%;">
         Jesus Youth Loreto - Marriage Bureau
     </h1>
 
@@ -24,42 +24,28 @@
             <option value="">All Genders</option>
         </select>
 
-        <!-- Caste Dropdown -->
+        <!-- Caste Dropdown (populated from data) -->
         <div class="dropdown-filter">
             <button class="dropdown-btn" onclick="toggleDropdown('casteDropdown', this)">
                 Caste <span class="arrow">▾</span>
             </button>
-            <div class="dropdown-menu" id="casteDropdown">
-                <label><input type="checkbox" class="casteCheck" value="Latin Catholic" checked> Latin Catholic</label>
-                <label><input type="checkbox" class="casteCheck" value="Anglo Indian" checked> Anglo Indian</label>
-            </div>
+            <div class="dropdown-menu" id="casteDropdown"></div>
         </div>
 
-        <!-- Education Dropdown -->
+        <!-- Education Dropdown (populated from data) -->
         <div class="dropdown-filter">
             <button class="dropdown-btn" onclick="toggleDropdown('educationDropdown', this)">
                 Education <span class="arrow">▾</span>
             </button>
-            <div class="dropdown-menu" id="educationDropdown">
-                <label><input type="checkbox" class="educationCheck" value="Lower than SSLC" checked> Lower than SSLC</label>
-                <label><input type="checkbox" class="educationCheck" value="SSLC" checked> SSLC</label>
-                <label><input type="checkbox" class="educationCheck" value="+2" checked> +2</label>
-                <label><input type="checkbox" class="educationCheck" value="Diploma" checked> Diploma</label>
-                <label><input type="checkbox" class="educationCheck" value="Degree" checked> Degree</label>
-                <label><input type="checkbox" class="educationCheck" value="PG" checked> PG</label>
-                <label><input type="checkbox" class="educationCheck" value="PHD" checked> PHD</label>
-            </div>
+            <div class="dropdown-menu" id="educationDropdown"></div>
         </div>
 
-        <!-- Employment Dropdown -->
+        <!-- Employment Dropdown (populated from data) -->
         <div class="dropdown-filter">
             <button class="dropdown-btn" onclick="toggleDropdown('employmentDropdown', this)">
                 Employment <span class="arrow">▾</span>
             </button>
-            <div class="dropdown-menu" id="employmentDropdown">
-                <label><input type="checkbox" class="employmentCheck" value="Employed" checked> Employed</label>
-                <label><input type="checkbox" class="employmentCheck" value="Unemployed" checked> Unemployed</label>
-            </div>
+            <div class="dropdown-menu" id="employmentDropdown"></div>
         </div>
 
         <input type="number" id="minAge" placeholder="Min Age">
