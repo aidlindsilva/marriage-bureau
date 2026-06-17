@@ -107,27 +107,10 @@ values
 
 function populateFilters() {
 
-
-fillSelect(
-    "genderFilter",
-    [...new Set(profiles.map(p => p.gender))]
-);
-
-fillSelect(
-    "casteFilter",
-    [...new Set(profiles.map(p => p.caste))]
-);
-
-fillSelect(
-    "educationFilter",
-    [...new Set(profiles.map(p => p.education))]
-);
-
-fillSelect(
-    "employmentFilter",
-    [...new Set(profiles.map(p => p.employment))]
-);
-
+    fillSelect(
+        "genderFilter",
+        [...new Set(profiles.map(p => p.gender))]
+    );
 
 }
 
