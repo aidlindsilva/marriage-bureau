@@ -1,0 +1,210 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f4f8fc;
+    color:#333;
+}
+
+/* Header */
+
+h1{
+    margin:0;
+    padding:25px;
+    text-align:center;
+    background:linear-gradient(135deg,#4a90e2,#6bb6ff);
+    color:white;
+    font-size:2rem;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Filters */
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    padding:20px;
+    background:white;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.filters input,
+.filters select{
+    padding:10px 12px;
+    border:1px solid #d0d7de;
+    border-radius:8px;
+    font-size:14px;
+    min-width:140px;
+    background:white;
+}
+
+.filters input:focus,
+.filters select:focus{
+    outline:none;
+    border-color:#4a90e2;
+    box-shadow:0 0 5px rgba(74,144,226,0.3);
+}
+
+/* Profile Grid */
+
+#profiles{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:25px;
+    padding:30px;
+}
+
+/* Profile Card */
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card h2{
+    margin:15px;
+    color:#2c3e50;
+}
+
+.card p{
+    margin:8px 15px;
+    color:#555;
+    line-height:1.4;
+}
+
+/* Button */
+
+.view-btn,
+.card button{
+    width:calc(100% - 30px);
+    margin:15px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#4a90e2;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.view-btn:hover,
+.card button:hover{
+    background:#357abd;
+}
+
+/* Modal */
+
+.modal{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:999;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:850px;
+    max-height:90vh;
+    overflow-y:auto;
+    margin:20px auto;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-content img{
+    width:100%;
+    max-height:400px;
+    object-fit:contain;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.modal-content h2{
+    color:#2c3e50;
+}
+
+/* Close Button */
+
+#closeModal{
+    float:right;
+    font-size:32px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#666;
+}
+
+#closeModal:hover{
+    color:#000;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4a90e2;
+    border-radius:10px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:1.6rem;
+        padding:20px;
+    }
+
+    .filters{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .filters input,
+    .filters select{
+        width:90%;
+    }
+
+    #profiles{
+        grid-template-columns:1fr;
+        padding:15px;
+    }
+
+    .card img{
+        height:280px;
+    }
+
+    .modal-content{
+        width:95%;
+        padding:15px;
+    }
+}

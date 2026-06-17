@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Bureau</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Our Lady of Loreto Church - Marriage Bureau</h1>
+
+<div class="filters">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search by name">
+
+    <select id="genderFilter">
+        <option value="">All Genders</option>
+    </select>
+
+    <select id="casteFilter">
+        <option value="">All Castes</option>
+    </select>
+
+    <select id="educationFilter">
+        <option value="">All Education</option>
+    </select>
+
+    <select id="employmentFilter">
+        <option value="">All Employment</option>
+    </select>
+
+    <input
+        type="number"
+        id="minAge"
+        placeholder="Min Age">
+
+    <input
+        type="number"
+        id="maxAge"
+        placeholder="Max Age">
+
+    <select id="sortBy">
+        <option value="newest">Newest Profiles</option>
+        <option value="youngest">Youngest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="az">Name A-Z</option>
+        <option value="za">Name Z-A</option>
+    </select>
+
+</div>
+
+<div id="profiles"></div>
+
+<div id="profileModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal">&times;</span>
+
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+    <div id="profiles"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
