@@ -190,20 +190,17 @@ const gender =
     .getElementById("genderFilter")
     .value;
 
-const caste =
-    document
-    .getElementById("casteFilter")
-    .value;
+const selectedEducations =
+[...document.querySelectorAll(".educationCheck:checked")]
+.map(c=>c.value);
 
-const education =
-    document
-    .getElementById("educationFilter")
-    .value;
+const selectedCastes =
+[...document.querySelectorAll(".casteCheck:checked")]
+.map(c=>c.value);
 
-const employment =
-    document
-    .getElementById("employmentFilter")
-    .value;
+const selectedEmployment =
+[...document.querySelectorAll(".employmentCheck:checked")]
+.map(c=>c.value);
 
 const minAge =
     Number(
