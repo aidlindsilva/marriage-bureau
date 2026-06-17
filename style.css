@@ -208,3 +208,22 @@ h1{
         padding:15px;
     }
 }
+.filter-group{
+    background:white;
+    padding:12px;
+    border-radius:10px;
+    min-width:180px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group strong{
+    display:block;
+    margin-bottom:8px;
+    color:#2c3e50;
+}
+
+.filter-group label{
+    display:block;
+    margin-bottom:6px;
+    cursor:pointer;
+}
