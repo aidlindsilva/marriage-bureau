@@ -130,41 +130,35 @@ function populateFilters() {
 
 function openProfile(profile) {
 
+const modal = document.getElementById("profileModal");
+const body = document.getElementById("modalBody");
 
-const modal =
-    document.getElementById("profileModal");
-
-const body =
-    document.getElementById("modalBody");
+// Build extras HTML automatically from any extra columns after status
+let extrasHTML = "";
+if (profile.extras) {
+    Object.entries(profile.extras).forEach(([key, value]) => {
+        // Capitalise the key nicely
+        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        extrasHTML += `<p><strong>${label}:</strong> ${value}</p>`;
+    });
+}
 
 body.innerHTML = `
-
 <img src="${getImageUrl(profile.picture)}">
-
 <h2>${profile.profileId}</h2>
-
 <h2>${profile.name}</h2>
-
 <p><strong>Age:</strong> ${calculateAge(profile.dob)}</p>
-
 <p><strong>Date of Birth:</strong> ${profile.dob}</p>
-
 <p><strong>Gender:</strong> ${profile.gender}</p>
-
 <p><strong>Caste:</strong> ${profile.caste}</p>
-
 <p><strong>Education:</strong> ${profile.education}</p>
-
 <p><strong>Employment:</strong> ${profile.employment}</p>
-
 <p><strong>Height:</strong> ${profile.height}</p>
-
 <p><strong>Weight:</strong> ${profile.weight}</p>
-
+${extrasHTML}
 `;
 
 modal.style.display = "block";
-
 
 }
 
